@@ -114,6 +114,14 @@ export function useLazorkit(): UseLazorkitReturn {
     setIsOperating(true);
     
     try {
+      // Clear any stale wallet data before creating new wallet
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('lazorkit-wallet');
+        localStorage.removeItem('CREDENTIAL_ID');
+        localStorage.removeItem('PUBLIC_KEY');
+        localStorage.removeItem('SMART_WALLET_ADDRESS');
+      }
+      
       // Ensure SDK is initialized with config
       const { initializeLazorkitStore } = await import('@/app/lib/lazorkit/provider');
       await initializeLazorkitStore();
@@ -122,6 +130,7 @@ export function useLazorkit(): UseLazorkitReturn {
       const store = useWalletStore.getState();
       await store.connect();
     } catch (err) {
+      console.error('Create wallet error:', err);
       setLocalError(transformError(err));
     } finally {
       setIsOperating(false);
@@ -144,6 +153,7 @@ export function useLazorkit(): UseLazorkitReturn {
       const store = useWalletStore.getState();
       await store.connect();
     } catch (err) {
+      console.error('Login error:', err);
       setLocalError(transformError(err));
     } finally {
       setIsOperating(false);

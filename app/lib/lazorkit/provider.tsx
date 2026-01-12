@@ -12,7 +12,8 @@ import { createContext, useContext, ReactNode, useEffect, useState, useRef } fro
 // Configuration constants - URLs from SDK defaults
 const RPC_URL = process.env.NEXT_PUBLIC_SOLANA_RPC_URL || 'https://api.devnet.solana.com';
 const PORTAL_URL = 'https://portal.lazor.sh';
-const PAYMASTER_URL = 'https://lazorkit-paymaster.onrender.com';
+// Paymaster URL from SDK's default config (_e in index.js)
+const PAYMASTER_URL = 'https://kora.devnet.lazorkit.com';
 
 interface LazorkitContextValue {
   rpcUrl: string;

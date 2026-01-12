@@ -136,6 +136,12 @@ export function WalletButton() {
               Please use the buttons above to re-authenticate.
             </p>
           )}
+          {/* Show hint for passkey data errors */}
+          {(error.includes('Passkey data not found') || error.includes('Invalid passkey data')) && (
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              Try clicking &quot;Create Wallet with Passkey&quot; instead.
+            </p>
+          )}
         </div>
       )}
     </div>
