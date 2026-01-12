@@ -4,9 +4,6 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_SOLANA_RPC_URL": "@solana_rpc_url"
-  },
   "headers": [
     {
       "source": "/(.*)",
