@@ -2,6 +2,8 @@
 
 A Next.js example application demonstrating how to integrate [Lazorkit SDK](https://lazorkit.com) for passkey-based Solana wallets and gasless transactions.
 
+**🚀 [Live Demo](https://lazorkit-example-qtox.vercel.app/)**
+
 ## Why Lazorkit?
 
 Traditional Solana wallets require users to manage seed phrases—a significant barrier for mainstream adoption. Lazorkit solves this by:

@@ -35,7 +35,7 @@ export default function Home() {
               </span>
             </div>
             <a
-              href="https://github.com/user/lazorkit-example"
+              href="https://github.com/Ademileke12/Lazorkit_Example"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
