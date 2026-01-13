@@ -13,9 +13,13 @@
  */
 
 import { WalletButton } from '@/app/components/WalletButton';
+import { WalletBalance } from '@/app/components/WalletBalance';
 import { TransferForm } from '@/app/components/TransferForm';
+import { useLazorkit } from '@/app/hooks/useLazorkit';
 
 export default function Home() {
+  const { walletAddress, isConnected } = useLazorkit();
+
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
       {/* Header */}
@@ -65,6 +69,13 @@ export default function Home() {
               Create a new wallet or login with an existing passkey
             </p>
             <WalletButton />
+            
+            {/* Show balance when connected */}
+            {isConnected && walletAddress && (
+              <div className="mt-6">
+                <WalletBalance walletAddress={walletAddress} />
+              </div>
+            )}
           </div>
         </section>
 
